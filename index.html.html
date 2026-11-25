@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MEDIA CONNECT – Beyond the Screen</title>
+<style>
+:root{--p:#5b21b6;--pd:#1a0536;--pl:#ede7fb;--bg:#fff;--bg2:#faf8ff;--tx:#1e1233;--mu:#6b6480;--bd:#e4dcf7;--card:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0618;--bg2:#140a24;--tx:#f3eefc;--mu:#a99bc7;--bd:#2f1f4d;--card:#1a0f2e;--pl:#2a1750;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d0618;--bg2:#140a24;--tx:#f3eefc;--mu:#a99bc7;--bd:#2f1f4d;--card:#1a0f2e;--pl:#2a1750;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}html{scroll-behavior:smooth;height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;font:16px/1.6 "Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--tx)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.1;margin:0 0 .5em}
+a{color:inherit}img,video{max-width:100%}
+.wrap{max-width:1140px;margin:auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+nav .wrap{display:flex;align-items:center;gap:14px;height:64px}
+.logo{font-weight:900;letter-spacing:.14em;text-decoration:none;font-size:15px}.logo b{color:var(--p)}
+.links{display:flex;gap:4px;margin-left:auto;align-items:center}
+.links a{padding:8px 10px;border-radius:99px;text-decoration:none;font-size:14px;color:var(--mu)}.links a:hover,.links a.on{background:var(--pl);color:var(--p)}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;padding:12px 24px;border-radius:99px;background:linear-gradient(135deg,#4c1d95,#9d174d 140%);color:#fff;text-decoration:none;box-shadow:0 8px 28px -8px #7c3aed;transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px -6px #a855f7}.btn.o{background:transparent;color:#fff;border:1.5px solid #ffffff88;box-shadow:none}.btn.s{padding:6px 12px;font-size:13px}.btn.g{background:var(--pl);color:var(--p);box-shadow:none}.btn.d{background:#dc2626;box-shadow:none}
+#burger{display:none;margin-left:auto;background:none;border:0;font-size:26px;color:var(--tx);cursor:pointer}
+@media(max-width:900px){#burger{display:block}.links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:12px;border-bottom:1px solid var(--bd);margin:0}.links.open{display:flex}}
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 20% 10%,#4c1d95,transparent 52%),radial-gradient(circle at 85% 80%,#86198f99,transparent 45%),#07010f;padding:90px 0 100px}
+.orb{position:absolute;border-radius:50%;filter:blur(2px);border:1px solid #ffffff22;animation:fl 9s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-26px) scale(1.05)}}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.screen{display:none}}
+.hero h1{font-size:clamp(44px,8vw,92px);font-weight:900;margin:.1em 0}
+.hero h1 span{background:linear-gradient(90deg,#e9d5ff,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{display:inline-block;border:1px solid #ffffff44;padding:4px 14px;border-radius:99px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;background:#ffffff12}
+.screen{aspect-ratio:4/3;border-radius:28px;border:1px solid #ffffff33;background:linear-gradient(145deg,#ffffff1c,#ffffff05);display:grid;place-items:center;position:relative;box-shadow:0 0 80px #a855f755,inset 0 0 60px #a855f722}
+.screen i{width:84px;height:84px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--p);font-size:30px;font-style:normal;animation:pl 2.4s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 #e9d5ffaa}100%{box-shadow:0 0 0 36px #e9d5ff00}}
+section{padding:72px 0}section.alt{background:var(--bg2)}
+.eyebrow{color:var(--p);font-weight:800;letter-spacing:.18em;font-size:12px;text-transform:uppercase}
+h2{font-size:clamp(30px,4.5vw,46px)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:24px;transition:.3s;position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 50px -20px #7c3aed77;border-color:#a78bfa}
+.ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#3b0f7a,#86198f);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.ph{aspect-ratio:1;border-radius:18px;background:linear-gradient(135deg,var(--pl),#d8b4fe55);display:grid;place-items:center;overflow:hidden;margin-bottom:14px;color:var(--p);font-size:42px;font-weight:800}
+.ph img{width:100%;height:100%;object-fit:cover}
+.team{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}.team .card{text-align:center;padding:16px}
+.chair{grid-column:1/-1;display:grid;grid-template-columns:minmax(200px,300px) 1fr;gap:28px;align-items:center;text-align:left!important;background:linear-gradient(135deg,#12032a,#5b21b6);color:#fff;border:0;padding:24px!important}
+.chair .ph{margin:0}@media(max-width:640px){.chair{grid-template-columns:1fr}}
+.role{color:var(--mu);font-size:14px}.chair .role{color:#e9d5ff}
+.cd{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.cd div{background:#ffffff14;border:1px solid #ffffff33;border-radius:18px;padding:12px 18px;min-width:78px;text-align:center}.cd b{display:block;font-size:30px;font-variant-numeric:tabular-nums}.cd small{font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.8}
+.pg{padding:60px 0 20px;background:linear-gradient(180deg,var(--pl),var(--bg))}
+form.f{display:grid;gap:14px;max-width:680px}
+input,select,textarea{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--p);outline-offset:1px}label{font-weight:600;font-size:14px;display:grid;gap:5px}
+.stars span{font-size:34px;cursor:pointer;color:var(--bd);transition:.15s}.stars span.on{color:#f5b301}
+.hp{position:absolute;left:-9999px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.chip{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:7px 16px;border-radius:99px;cursor:pointer;font:inherit;font-size:14px}.chip.on{background:var(--p);color:#fff;border-color:var(--p)}
+.gi{aspect-ratio:4/3;border-radius:18px;overflow:hidden;position:relative;cursor:pointer;background:var(--pl)}.gi img,.gi video{width:100%;height:100%;object-fit:cover;transition:.4s}.gi:hover img{transform:scale(1.07)}
+.gi .cap{position:absolute;inset:auto 0 0;padding:30px 12px 10px;background:linear-gradient(transparent,#000a);color:#fff;font-size:13px}
+.gi .pl{position:absolute;inset:0;display:grid;place-items:center;font-size:40px;color:#fff;text-shadow:0 2px 12px #000}
+.lb{position:fixed;inset:0;background:#000e;z-index:50;display:grid;place-items:center;padding:20px}.lb img,.lb video,.lb iframe{max-width:94vw;max-height:80vh;border-radius:14px;border:0}.lb iframe{width:min(900px,94vw);aspect-ratio:16/9}
+.md{position:fixed;inset:0;background:#0009;z-index:60;display:grid;place-items:center;padding:16px;overflow:auto}.md form{background:var(--card);border-radius:22px;padding:24px;width:min(520px,100%);display:grid;gap:12px;max-height:92vh;overflow:auto}
+.tb{display:flex;gap:6px;position:absolute;top:8px;right:8px;flex-wrap:wrap;justify-content:flex-end}
+.tb button{border:0;border-radius:8px;background:#000a;color:#fff;cursor:pointer;padding:3px 8px;font-size:12px}
+.chair .tb{position:static;grid-column:1/-1;justify-content:flex-start}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--pd);color:#fff;padding:14px 22px;border-radius:14px;z-index:80;max-width:90vw;box-shadow:0 10px 40px #0007}.toast.e{background:#b91c1c}
+.stat{font-size:38px;font-weight:900;color:var(--p)}
+.bar{display:flex;align-items:center;gap:10px;margin:6px 0}.bar i{display:block;height:12px;border-radius:99px;background:linear-gradient(90deg,#7c3aed,#d946ef);min-width:2px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--bd);vertical-align:top}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.row>*{width:auto;flex:1;min-width:140px}
+footer{background:#07010f;color:#cbb8ee;padding:48px 0;text-align:center;font-size:14px}
+.note{background:var(--pl);border-radius:14px;padding:14px 18px;color:var(--tx);font-size:14px}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#home">MEDIA<b>◆</b>CONNECT</a><button id="burger" aria-label="Menu">☰</button><div class="links" id="links"></div></div></nav>
+<main id="app"></main>
+<footer><div class="wrap"><b style="letter-spacing:.2em;color:#fff">MEDIA CONNECT</b><p>Beyond the Screen: Connecting Voices, Creating Opportunities.<br>Organized by Mass Communication students, McPherson University.</p></div></footer>
+<script>
+"use strict";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const DEF_TEAM=[["Chairman","Chukwudi Maxwell"],["Vice Chairperson","Ayodele Oluwatomi"],["General Secretary","Amaliri Precious"],["Financial Secretary","Asabo Ademide"],["Sponsorship Team Lead","Olatunji Ayoola"],["Media Team Lead","Olajire Azeez"],["Registration Team Lead","Oghiakhe-daniel Priscilla"],["Ushering and Protocol Team Lead","Feyisetan Ibukunoluwa Stephanie"],["Ushering and Protocol Assistant Team Lead","Adesoji Ifeoluwa"],["Volunteers Team Lead","Oladunjoye Marvellous"],["Logistics Team Lead","Adade Wisdom"],["Logistics Team Lead Assistant","Ibeh Onyebuchi"],["Publicity Team Lead","Nwokocha- Francis Angel"]].map((r,i)=>({id:"t"+(i+1),role:r[0],name:r[1],order:i,photo:""}));
+const DEF_SET={theme:"Beyond the Screen: Connecting Voices, Creating Opportunities.",vision:"To create opportunities and help students build their knowledge in creativity and technology.",desc:"Media Connect is organized by Mass Communication students of McPherson University. It brings students together, exposes them to opportunities in the creative and technology industries, encourages networking and knowledge sharing, and helps them discover and develop their creative and technological abilities.",announce:"Registration is open. Reserve your seat today!",date:"2027-01-23T09:00"};
+const CATS=["Event Highlights","Speakers and Sessions","Behind the Scenes","Networking","Audience and Participants"];
+const S={team:[],speakers:[],gallery:[],sponsors:[],feedback:[],registrations:[],enquiries:[],settings:[]};
+let db=null,assets=null,dl=null,admin=false,tab="overview",gcat="All",flt={q:"",r:""},sent={},rating=0,tick=null;
+const set=()=>Object.assign({},DEF_SET,(S.settings.find(x=>x.id==="site")||{}));
+const team=()=>S.team.length?S.team.slice().sort((a,b)=>a.order-b.order):DEF_TEAM;
+const A=h=>admin?h:"";
+const img=id=>id?"/_blob/"+encodeURIComponent(id):"";
+const toast=(m,e)=>{const t=document.createElement("div");t.className="toast"+(e?" e":"");t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),4200)};
+function sub(n){try{db.collection(n).onSnapshot(s=>{S[n]=s.docs.map(d=>Object.assign({id:d.id},d.data()));render()},()=>{})}catch(e){}}
+const put=async(c,o)=>{if(!db)throw new Error("Please open this page while signed in to Claude to save data.");const id=o.id||uid();const d=Object.assign({},o);delete d.id;await db.collection(c).doc(id).set(d);return id};
+const del=(c,id)=>db.collection(c).doc(id).delete();
+async function seedTeam(){if(!S.team.length){for(const m of DEF_TEAM)await put("team",m)}}
+const initials=n=>n.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+const photo=(p,n)=>`<div class="ph">${p?`<img src="${img(p)}" alt="${esc(n)}">`:esc(initials(n)||"◆")}</div>`;
+function ctl(c,id,extra){return A(`<div class="tb">${extra||""}<button data-a="edit" data-c="${c}" data-id="${id}">Edit</button><button data-a="del" data-c="${c}" data-id="${id}">Delete</button></div>`)}
+
+/* ---------- pages ---------- */
+const NAV=[["home","Home"],["about","About"],["team","Meet the Team"],["speakers","Speakers"],["gallery","Gallery"],["register","Registration"],["feedback","Feedback"],["contact","Contact"]];
+function nav(p){$("#links").innerHTML=NAV.map(n=>`<a href="#${n[0]}" class="${p===n[0]?"on":""}">${n[1]}</a>`).join("")+`<a class="btn s" href="#register" style="color:#fff">Register Now</a>`+(admin?`<a href="#admin" class="on">Dashboard</a>`:"")}
+function teamCard(m,i,list){
+ if(i===0&&list.length>1)return `<div class="card chair">${photo(m.photo,m.name)}<div><span class="tag">Leading Media Connect</span><h2 style="margin-top:12px">${esc(m.name)}</h2><div class="role" style="font-size:18px">${esc(m.role)}</div></div>${tc(m)}</div>`;
+ return `<div class="card">${photo(m.photo,m.name)}<b>${esc(m.name)}</b><div class="role">${esc(m.role)}</div>${tc(m)}</div>`}
+const tc=m=>A(`<div class="tb"><button data-a="photo" data-id="${m.id}">Photo</button><button data-a="edit" data-c="team" data-id="${m.id}">Edit</button><button data-a="up" data-id="${m.id}">↑</button><button data-a="dn" data-id="${m.id}">↓</button><button data-a="del" data-c="team" data-id="${m.id}">✕</button></div>`);
+const head=(e,t,s)=>`<div style="margin-bottom:30px"><div class="eyebrow">${e}</div><h2>${t}</h2>${s?`<p style="color:var(--mu);max-width:640px">${s}</p>`:""}</div>`;
+const pghead=(e,t,s)=>`<div class="pg"><div class="wrap">${head(e,t,s)}</div></div>`;
+function speakerCard(s){return `<div class="card">${photo(s.photo,s.name)}<h3 style="font-size:22px">${esc(s.name)}</h3><div class="role"><b>${esc(s.title)}</b>${s.org?" · "+esc(s.org):""}</div>${s.area?`<span class="tag" style="color:var(--p);border-color:var(--bd);background:var(--pl);margin:8px 0;letter-spacing:.05em;text-transform:none">${esc(s.area)}</span>`:""}<p style="color:var(--mu);font-size:14px">${esc(s.bio)}</p>${s.link&&/^https:\/\//.test(s.link)?`<a href="${esc(s.link)}" target="_blank" rel="noopener">Connect ↗</a>`:""}${ctl("speakers",s.id)}</div>`}
+const soon=()=>[1,2,3].map(()=>`<div class="card">${photo("","?")}<h3 style="font-size:20px">Speaker details coming soon</h3><p style="color:var(--mu);font-size:14px">Our line-up of industry voices will be announced shortly.</p></div>`).join("");
+function media(g,full){
+ if(g.type==="link"){const m=(g.url||"").match(/(?:youtu\.be\/|v=)([\w-]{11})/);const src=m?"https://www.youtube.com/embed/"+m[1]:(/^https:\/\//.test(g.url)?g.url:"");if(full)return `<iframe src="${esc(src)}" allow="fullscreen" referrerpolicy="no-referrer"></iframe>`;return `<div style="height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#2e1065,#7c3aed)"></div><div class="pl">▶</div>`}
+ const u=g.asset?img(g.asset):"";if(g.type==="video")return full?`<video src="${u}" controls autoplay></video>`:`<video src="${u}" muted preload="metadata"></video><div class="pl">▶</div>`;
+ return `<img src="${u}" alt="${esc(g.caption)}" loading="lazy">`}
+function gallery(n){const l=S.gallery.filter(g=>gcat==="All"||g.cat===gcat).slice(0,n||999);return l.length?`<div class="grid">${l.map(g=>`<div class="gi" data-a="lb" data-id="${g.id}">${media(g)}<div class="cap">${esc(g.caption)}</div>${ctl("gallery",g.id)}</div>`).join("")}</div>`:`<div class="note">Gallery moments will appear here. ${admin?"Use “Add media” to upload photos and videos.":"Check back soon!"}</div>`}
+function stars(){return `<div class="stars" id="stars">${[1,2,3,4,5].map(i=>`<span data-a="star" data-n="${i}" class="${i<=rating?"on":""}">★</span>`).join("")}</div>`}
+function formPage(kind){
+ if(sent[kind])return `<div class="card" style="max-width:680px"><div class="ic">✓</div><h3>${kind==="feedback"?"Thank you for being part of Media Connect. Your feedback helps us create better opportunities and experiences.":kind==="register"?"You’re registered! We can’t wait to see you at Media Connect.":"Message received. The organizing team will reply soon."}</h3></div>`;
+ const hp=`<input class="hp" name="website" tabindex="-1" autocomplete="off">`;
+ if(kind==="feedback")return `<form class="f" data-form="feedback">${hp}<label>Full name (optional)<input name="name"></label><label>Email (optional)<input name="email" type="email"></label><label>Overall event rating *${stars()}</label><label>What did you enjoy most?<textarea name="enjoyed" rows="2"></textarea></label><label>What did you learn?<textarea name="learned" rows="2"></textarea></label><label>How would you rate the speakers?<select name="speakers"><option value="">Select…</option>${["Excellent","Good","Average","Poor"].map(o=>`<option>${o}</option>`).join("")}</select></label><label>What should we improve?<textarea name="improve" rows="2"></textarea></label><label>Would you recommend Media Connect?<select name="recommend" required><option value="">Select…</option><option>Yes</option><option>No</option></select></label><label>Additional comments<textarea name="comments" rows="3"></textarea></label><button class="btn" id="sb">Submit Feedback</button></form>`;
+ if(kind==="register")return `<form class="f" data-form="register">${hp}<label>Full name *<input name="name" required></label><label>Email *<input name="email" type="email" required></label><label>Phone number *<input name="phone" type="tel" required></label><label>Institution *<input name="institution" required></label><label>Department *<input name="department" required></label><label>Level of study *<input name="level" required placeholder="e.g. 300 Level"></label><label>Area of interest *<select name="interest" required>${["Creativity","Technology","Media","Business","Other"].map(o=>`<option>${o}</option>`).join("")}</select></label><label>How did you hear about Media Connect?<input name="source"></label><button class="btn" id="sb">Register Now</button></form>`;
+ return `<form class="f" data-form="contact">${hp}<label>Name *<input name="name" required></label><label>Email *<input name="email" type="email" required></label><label>Phone (optional)<input name="phone" type="tel"></label><label>Subject *<select name="subject" required>${["General enquiry","Sponsorship","Partnership","Media / Press"].map(o=>`<option>${o}</option>`).join("")}</select></label><label>Message *<textarea name="message" rows="5" required></textarea></label><button class="btn" id="sb">Send Message</button></form>`}
+const EXP=[["🎨","Creative and Digital Skills","Hands-on sessions in design, content and storytelling."],["⚡","Technology and Innovation","Explore the tools shaping tomorrow’s media."],["🤝","Networking Opportunities","Meet peers, mentors and industry voices."],["🏢","Industry Exposure","See how creative and tech organisations really work."],["💡","Knowledge Sharing","Learn from lived experience and open conversation."],["🚀","Career and Business Opportunities","Turn ideas into careers and ventures."]];
+function home(){const s=set();return `
+<div class="hero"><div class="orb" style="width:240px;height:240px;right:6%;top:8%"></div><div class="orb" style="width:120px;height:120px;left:44%;bottom:6%;animation-delay:-3s"></div>
+<div class="wrap"><div><span class="tag">By Mass Communication Students · McPherson University</span><h1>MEDIA<br><span>CONNECT</span></h1><h3 style="font-size:clamp(22px,3vw,32px)">BEYOND THE SCREEN</h3><p style="font-size:19px;opacity:.9;max-width:520px">Connecting Voices, Creating Opportunities. Proudly organized by Mass Communication students of McPherson University. ${esc(s.announce)}</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"><a class="btn" href="#about">Explore Event</a><a class="btn o" href="#speakers">Meet Our Speakers</a></div><div class="cd" id="cd"></div></div><div class="screen"><i>▶</i></div></div></div>
+<section id="about"><div class="wrap">${head("About","What is Media Connect?",esc(s.desc))}${A(`<button class="btn s g" data-a="settings">Edit website content</button>`)}<div class="card" style="background:linear-gradient(135deg,var(--pl),var(--card));margin-top:16px"><div class="eyebrow">Our Vision</div><h3 style="font-size:26px;margin:6px 0 0">“${esc(s.vision)}”</h3></div></div></section>
+<section class="alt"><div class="wrap">${head("What to Expect","Six reasons to be there")}<div class="grid">${EXP.map(e=>`<div class="card"><div class="ic">${e[0]}</div><h3 style="font-size:20px">${e[1]}</h3><p style="color:var(--mu);margin:0">${e[2]}</p></div>`).join("")}</div></div></section>
+<section><div class="wrap">${head("The People","Meet the Team")}<div class="grid team">${team().slice(0,5).map(teamCard.bind(null)).join("").replace(/class="card chair"/,'class="card"')}</div><p><a class="btn" href="#team">See the full team</a></p></div></section>
+<section class="alt"><div class="wrap">${head("Speakers","Voices you’ll hear from")}<div class="grid">${(S.speakers.length?S.speakers.slice(0,3).map(speakerCard).join(""):soon())}</div></div></section>
+<section><div class="wrap">${head("Gallery","Moments that matter")}${gallery(6)}<p><a class="btn" href="#gallery">Open gallery</a></p></div></section>
+<section style="background:linear-gradient(135deg,#12032a,#4c1d95);color:#fff;text-align:center"><div class="wrap"><h2>Share your experience</h2><p>Your voice helps us build better opportunities.</p><a class="btn" style="background:#fff;color:#6d28d9" href="#feedback">Give feedback</a></div></section>
+${sponsors()}`}
+function sponsors(){return `<section class="alt" id="sponsors"><div class="wrap">${head("Partners","Our Partners and Sponsors")}${A(`<p><button class="btn s g" data-a="add" data-c="sponsors">+ Add sponsor</button></p>`)}<div class="grid">${S.sponsors.length?S.sponsors.map(x=>`<div class="card"><div class="ph" style="aspect-ratio:2/1">${x.logo?`<img src="${img(x.logo)}" alt="${esc(x.name)}" style="object-fit:contain">`:"LOGO"}</div><b>${esc(x.name)}</b><p style="color:var(--mu);font-size:14px">${esc(x.desc)}</p>${x.link&&/^https:\/\//.test(x.link)?`<a href="${esc(x.link)}" target="_blank" rel="noopener">Visit ↗</a>`:""}${ctl("sponsors",x.id)}</div>`).join(""):[1,2,3,4].map(()=>`<div class="card"><div class="ph" style="aspect-ratio:2/1;font-size:18px">LOGO</div><b>Partner slot</b><p style="color:var(--mu);font-size:14px">Become a Media Connect partner.</p></div>`).join("")}</div><p><a class="btn" href="#contact">Partner with us</a></p></div></section>`}
+function pages(p){switch(p){
+ case"team":return pghead("The People","MEET THE TEAM","The organizing team behind Media Connect.")+`<section><div class="wrap">${A(`<p><button class="btn s g" data-a="add" data-c="team">+ Add member</button> <span class="note">Use Photo to upload a picture; ↑ ↓ to reorder.</span></p>`)}<div class="grid team">${team().map(teamCard).join("")}</div></div></section>`;
+ case"speakers":return pghead("Speakers","MEET OUR SPEAKERS","Facilitators and industry voices.")+`<section><div class="wrap">${A(`<p><button class="btn s g" data-a="add" data-c="speakers">+ Add speaker</button></p>`)}<div class="grid">${S.speakers.length?S.speakers.map(speakerCard).join(""):soon()}</div></div></section>`;
+ case"gallery":return pghead("Gallery","EVENT GALLERY","Highlights, sessions and behind-the-scenes.")+`<section><div class="wrap">${A(`<p><button class="btn s g" data-a="addmedia">+ Add media</button></p>`)}<div class="chips">${["All"].concat(CATS).map(c=>`<button class="chip ${gcat===c?"on":""}" data-a="cat" data-id="${esc(c)}">${c}</button>`).join("")}</div>${gallery()}</div></section>`;
+ case"register":return pghead("Join us","REGISTER FOR MEDIA CONNECT","Secure your spot.")+`<section><div class="wrap">${formPage("register")}</div></section>`;
+ case"feedback":return pghead("Feedback","SHARE YOUR EXPERIENCE","Tell us how Media Connect went.")+`<section><div class="wrap">${formPage("feedback")}</div></section>`;
+ case"contact":return pghead("Contact","CONTACT &amp; PARTNERSHIP","Questions, sponsorship and partnership enquiries.")+`<section><div class="wrap">${formPage("contact")}</div></section>`;
+ case"admin":return adminPage();
+ default:return home()}}
+
+/* ---------- admin ---------- */
+const avg=()=>S.feedback.length?(S.feedback.reduce((a,f)=>a+(+f.rating||0),0)/S.feedback.length).toFixed(1):"–";
+function table(cols,rows,c,fn){return `<div class="tw"><table><tr>${cols.map(x=>`<th>${x[1]}</th>`).join("")}<th></th></tr>${rows.map(r=>`<tr>${cols.map(x=>`<td>${esc(r[x[0]])}</td>`).join("")}<td><button class="btn s d" data-a="del" data-c="${c}" data-id="${r.id}">Delete</button></td></tr>`).join("")||`<tr><td colspan="9">Nothing here yet.</td></tr>`}</table></div>`}
+function filt(list,fields){const q=flt.q.toLowerCase();return list.filter(r=>(!q||fields.some(f=>String(r[f]||"").toLowerCase().includes(q)))&&(!flt.r||String(r.rating)===flt.r)).sort((a,b)=>(b.at||0)-(a.at||0))}
+function adminPage(){
+ if(!admin)return pghead("Admin","ADMIN PORTAL")+`<section><div class="wrap"><div class="card" style="max-width:520px"><div class="ic">🔒</div><h3>Authorized organizers only</h3><p style="color:var(--mu)">Only the site owner can open this dashboard or change anything on the site. Sign in to claude.ai with the owner’s email to unlock it. There is no public sign-up for admin access, and password resets go through the owner’s Claude account.</p></div></div></section>`;
+ const T=[["overview","Overview"],["feedback","Feedback"],["registrations","Registrations"],["enquiries","Enquiries"],["site","Site content"]];
+ let b="";
+ if(tab==="overview"){const d=[1,2,3,4,5].map(n=>S.feedback.filter(f=>+f.rating===n).length),mx=Math.max(1,...d);
+  const st=[["Feedback",S.feedback.length],["Avg rating",avg()],["Registered",S.registrations.length],["Images",S.gallery.filter(g=>g.type==="image").length],["Videos",S.gallery.filter(g=>g.type!=="image").length],["Speakers",S.speakers.length],["Team",team().length],["Sponsors",S.sponsors.length]];
+  b=`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">${st.map(x=>`<div class="card"><div class="stat">${x[1]}</div>${x[0]}</div>`).join("")}</div><div class="card" style="margin-top:20px"><h3>Rating distribution</h3>${d.map((v,i)=>`<div class="bar"><span style="width:30px">${i+1}★</span><i style="width:${v/mx*60}%"></i> ${v}</div>`).reverse().join("")}</div><p class="note" style="margin-top:20px">Manage the team, speakers, gallery and sponsors directly on their public pages: edit controls appear on each card while you’re signed in as admin.</p>`}
+ if(tab==="feedback"){const l=filt(S.feedback,["name","email"]);b=`<div class="row"><input placeholder="Search name or email" data-f="q" value="${esc(flt.q)}"><select data-f="r"><option value="">All ratings</option>${[5,4,3,2,1].map(n=>`<option ${flt.r==n?"selected":""}>${n}</option>`).join("")}</select><button class="btn s" data-a="csv" data-c="feedback">Export CSV</button></div>`+table([["name","Name"],["email","Email"],["rating","★"],["enjoyed","Enjoyed"],["learned","Learned"],["speakers","Speakers"],["improve","Improve"],["recommend","Recommend"],["comments","Comments"]],l,"feedback")}
+ if(tab==="registrations"){const l=filt(S.registrations,["name","email","institution","department","interest"]);b=`<div class="row"><input placeholder="Search name, institution, department, interest" data-f="q" value="${esc(flt.q)}"><button class="btn s" data-a="csv" data-c="registrations">Export CSV</button></div><p><b>${S.registrations.length}</b> total registrations</p>`+table([["name","Name"],["email","Email"],["phone","Phone"],["institution","Institution"],["department","Dept"],["level","Level"],["interest","Interest"],["source","Heard via"]],l,"registrations")}
+ if(tab==="enquiries")b=table([["name","Name"],["email","Email"],["phone","Phone"],["subject","Subject"],["message","Message"]],filt(S.enquiries,["name","email","subject"]),"enquiries");
+ if(tab==="site")b=`<p><button class="btn" data-a="settings">Edit theme, vision, description, announcement &amp; event date</button></p>`;
+ return pghead("Admin","DASHBOARD")+`<section><div class="wrap"><div class="tabs">${T.map(t=>`<button class="chip ${tab===t[0]?"on":""}" data-a="tab" data-id="${t[0]}">${t[1]}</button>`).join("")}</div>${b}</div></section>`}
+
+/* ---------- modal forms ---------- */
+const FORMS={
+ team:[["name","Full name"],["role","Position"]],
+ speakers:[["name","Full name"],["title","Professional title"],["org","Organization"],["area","Area of expertise"],["bio","Short biography","area"],["link","Social link (https://…)"],["photo","Photograph","file"]],
+ sponsors:[["name","Organization name"],["desc","Short description","area"],["link","Website (https://…)"],["logo","Logo","file"]],
+ settings:[["theme","Event theme"],["vision","Vision","area"],["desc","Description","area"],["announce","Announcement"],["date","Event date & time","datetime-local"]],
+ gallery:[["caption","Caption"],["cat","Category","sel"]]};
+function modal(title,fields,vals,cb){
+ const m=document.createElement("div");m.className="md";
+ m.innerHTML=`<form><h3>${esc(title)}</h3>${fields.map(f=>`<label>${esc(f[1])}${f[2]==="area"?`<textarea name="${f[0]}" rows="3">${esc(vals[f[0]])}</textarea>`:f[2]==="sel"?`<select name="${f[0]}">${CATS.map(c=>`<option ${vals[f[0]]===c?"selected":""}>${c}</option>`).join("")}</select>`:f[2]==="file"?`<input type="file" name="${f[0]}" accept="image/*">`:`<input name="${f[0]}" type="${f[2]||"text"}" value="${esc(vals[f[0]])}">`}</label>`).join("")}<div class="row"><button class="btn">Save</button><button type="button" class="btn g" data-x>Cancel</button></div></form>`;
+ document.body.appendChild(m);m.querySelector("[data-x]").onclick=()=>m.remove();
+ m.querySelector("form").onsubmit=async e=>{e.preventDefault();const o=Object.assign({},vals);const fd=new FormData(e.target);const btn=e.target.querySelector(".btn");btn.disabled=true;btn.textContent="Saving…";
+  try{for(const f of fields){const v=fd.get(f[0]);if(f[2]==="file"){if(v&&v.size){if(!assets)throw new Error("Uploads need editor access.");o[f[0]]=(await assets.upload(v)).id}}else o[f[0]]=v}await cb(o);m.remove();toast("Saved")}catch(x){toast(x.message||"Could not save",1);btn.disabled=false;btn.textContent="Save"}}}
+async function upload(file){if(!assets)throw new Error("Uploads need editor access.");return(await assets.upload(file)).id}
+function pick(multi,cb,acc){const i=document.createElement("input");i.type="file";i.accept=acc||"image/*";i.multiple=!!multi;i.onchange=()=>cb([...i.files]);i.click()}
+function csv(c){const l=S[c];if(!l.length)return toast("No records to export",1);const keys=[...new Set(l.flatMap(r=>Object.keys(r)))].filter(k=>k!=="id");const q=v=>'"'+String(v==null?"":v).replace(/"/g,'""')+'"';const t=[keys.map(q).join(",")].concat(l.map(r=>keys.map(k=>q(k==="at"?new Date(r.at).toISOString():r[k])).join(","))).join("\n");
+ if(!dl)return toast("Download unavailable here",1);dl.save({filename:"media-connect-"+c+".csv",data:new Blob([t],{type:"text/csv"})}).catch(()=>{})}
+
+/* ---------- events ---------- */
+document.addEventListener("click",async e=>{
+ if(e.target.id==="burger"){$("#links").classList.toggle("open");return}
+ const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,id=t.dataset.id,c=t.dataset.c;
+ try{
+ if(a==="star"){rating=+t.dataset.n;[...document.querySelectorAll("#stars span")].forEach((s,i)=>s.classList.toggle("on",i<rating))}
+ else if(a==="tab"){tab=id;flt={q:"",r:""};render()}
+ else if(a==="cat"){gcat=id;render()}
+ else if(a==="lb"){const g=S.gallery.find(x=>x.id===id);if(!g||e.target.closest(".tb"))return;const l=document.createElement("div");l.className="lb";l.innerHTML=media(g,1)+`<p style="color:#fff;position:absolute;bottom:14px;text-align:center;width:100%">${esc(g.caption)}</p>`;l.onclick=ev=>{if(ev.target===l)l.remove()};document.body.appendChild(l)}
+ else if(a==="csv")csv(c);
+ else if(a==="settings")modal("Website content",FORMS.settings,set(),o=>put("settings",Object.assign(o,{id:"site"})));
+ else if(a==="add"){if(c==="team")await seedTeam();modal("Add "+c.replace(/s$/,""),FORMS[c],c==="team"?{order:team().length}:{},o=>put(c,Object.assign(o,{order:o.order==null?Date.now():o.order})))}
+ else if(a==="edit"){if(c==="team")await seedTeam();const o=(c==="team"?team():S[c]).find(x=>x.id===id);if(o)modal("Edit",FORMS[c],o,x=>put(c,x))}
+ else if(a==="del"){if(!confirm("Delete this item permanently?"))return;if(c==="team")await seedTeam();await del(c,id);toast("Deleted")}
+ else if(a==="photo"){await seedTeam();pick(false,async f=>{try{const m=team().find(x=>x.id===id);toast("Uploading…");await put("team",Object.assign({},m,{photo:await upload(f[0])}));toast("Photo updated")}catch(x){toast(x.message,1)}})}
+ else if(a==="up"||a==="dn"){await seedTeam();const l=team();const i=l.findIndex(x=>x.id===id),j=a==="up"?i-1:i+1;if(j<0||j>=l.length)return;[l[i],l[j]]=[l[j],l[i]];for(let k=0;k<l.length;k++)if(l[k].order!==k||true)await put("team",Object.assign({},l[k],{order:k}))}
+ else if(a==="addmedia"){modal("Add media (images, video file or video link)",[["files","Upload images/videos","file"],["url","…or video link (YouTube / https)"],["cat","Category","sel"],["caption","Caption"]],{},async o=>{});
+  const m=document.querySelector(".md form");const inp=m.querySelector("input[type=file]");inp.multiple=true;inp.accept="image/*,video/*";
+  m.onsubmit=async ev=>{ev.preventDefault();const fd=new FormData(m),cat=fd.get("cat"),cap=fd.get("caption"),url=fd.get("url");const btn=m.querySelector(".btn");btn.disabled=true;btn.textContent="Uploading…";
+   try{let n=0;for(const f of inp.files){const aid=await upload(f);await put("gallery",{asset:aid,type:f.type.startsWith("video")?"video":"image",cat,caption:cap||f.name,at:Date.now()+n++})}
+    if(url){if(!/^https:\/\//.test(url))throw new Error("Link must start with https://");await put("gallery",{url,type:"link",cat,caption:cap||"Video",at:Date.now()})}
+    document.querySelector(".md").remove();toast("Media added")}catch(x){toast(x.message||"Upload failed",1);btn.disabled=false;btn.textContent="Save"}}}
+ }catch(x){toast(x.message||"Something went wrong",1)}});
+document.addEventListener("input",e=>{const f=e.target.dataset.f;if(f){flt[f]=e.target.value;const p=e.target.selectionStart;render();const n=document.querySelector(`[data-f="${f}"]`);if(n&&f==="q"){n.focus();n.setSelectionRange(p,p)}}});
+document.addEventListener("change",e=>{const f=e.target.dataset.f;if(f==="r"){flt.r=e.target.value;render()}});
+document.addEventListener("submit",async e=>{const f=e.target.dataset&&e.target.dataset.form;if(!f)return;e.preventDefault();
+ const fd=new FormData(e.target);if(fd.get("website"))return;const btn=$("#sb");
+ if(f==="feedback"&&!rating)return toast("Please choose a star rating",1);
+ const key=f+":"+(fd.get("email")||fd.get("name")||"")+":"+(fd.get("message")||fd.get("comments")||"");
+ if(localStorageGet(key))return toast("This looks like a duplicate submission.",1);
+ const o={};fd.forEach((v,k)=>{if(k!=="website")o[k]=String(v).trim().slice(0,2000)});o.at=Date.now();if(f==="feedback")o.rating=rating;
+ btn.disabled=true;btn.textContent="Submitting…";
+ try{await put(f==="register"?"registrations":f==="contact"?"enquiries":"feedback",o);localStorageSet(key);sent[f]=1;rating=0;render();toast("Submitted successfully")}
+ catch(x){btn.disabled=false;btn.textContent="Try again";toast(x.message||"Could not submit. Please try again.",1)}});
+function localStorageGet(k){try{return localStorage.getItem("mc:"+k)}catch(e){return sent[k]}}
+function localStorageSet(k){try{localStorage.setItem("mc:"+k,"1")}catch(e){sent[k]=1}}
+
+/* ---------- render ---------- */
+function countdown(){const el=$("#cd");if(!el)return;const d=new Date(set().date)-Date.now();if(isNaN(d))return;if(d<=0){el.innerHTML="<div><b>🎉</b><small>It’s live</small></div>";return}
+ const v=[["Days",d/864e5],["Hours",d/36e5%24],["Mins",d/6e4%60],["Secs",d/1e3%60]];el.innerHTML=v.map(x=>`<div><b>${String(Math.floor(x[1])).padStart(2,"0")}</b><small>${x[0]}</small></div>`).join("")}
+function render(){if(document.querySelector(".md,.lb")&&!document.querySelector("[data-f]"))return;
+ const p=(location.hash||"#home").slice(1)||"home";const page=(NAV.some(n=>n[0]===p)&&p!=="about")||(p==="admin"&&admin)?p:"home";
+ const y=window.scrollY;$("#app").innerHTML=pages(page);nav(page);countdown();if(p==="about"||p==="sponsors")document.getElementById(p)&&document.getElementById(p).scrollIntoView();else if(!window.__first)window.scrollTo(0,y);}
+addEventListener("hashchange",()=>{window.__first=1;render();window.__first=0;$("#links").classList.remove("open");if(!/about|sponsors/.test(location.hash))scrollTo(0,0)});
+setInterval(countdown,1000);render();
+(async()=>{try{if(!window.claude)return;const[d,a,l,u]=await Promise.all([claude.use("db"),claude.use("assets"),claude.use("downloads"),claude.use("user")]);db=d;assets=a;dl=l;
+ if(u){try{admin=!!(await u.isOwner())}catch(e){}}
+ if(db){["team","speakers","gallery","sponsors","settings"].forEach(sub);if(admin)["feedback","registrations","enquiries"].forEach(sub)}render()}catch(e){render()}})();
+</script>
+</body>
+</html>
